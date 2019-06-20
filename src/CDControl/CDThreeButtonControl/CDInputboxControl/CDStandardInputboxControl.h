@@ -21,7 +21,6 @@
 #import <Foundation/Foundation.h>
 #import "CDInputboxControl.h"
 
-@interface CDStandardInputboxControl : CDInputboxControl {
-}
+@interface CDStandardInputboxControl : CDInputboxControl
 
 @end

@@ -3,68 +3,69 @@
  * I think they got this from an old version of Growl (growl.info).
  */
 
-#define BUBBLE_HORIZ_LEFT   0
-#define BUBBLE_HORIZ_CENTER 1
-#define BUBBLE_HORIZ_RIGHT  2
+#import <Cocoa/Cocoa.h>
 
-#define BUBBLE_VERT_TOP     4
-#define BUBBLE_VERT_CENTER  8
-#define BUBBLE_VERT_BOTTOM  16
+typedef NS_OPTIONS(unsigned int, KABubblePosition) {
+	BUBBLE_HORIZ_LEFT   = 0,
+	BUBBLE_HORIZ_CENTER = 1,
+	BUBBLE_HORIZ_RIGHT  = 2,
 
-@interface KABubbleWindowController : NSWindowController {
-	id _delegate;
+	BUBBLE_VERT_TOP     = 4,
+	BUBBLE_VERT_CENTER  = 8,
+	BUBBLE_VERT_BOTTOM  = 16
+};
+
+@protocol KABubbleWindowControllerDelegate;
+
+@interface KABubbleWindowController : NSWindowController <NSWindowDelegate> {
+	id<KABubbleWindowControllerDelegate> _delegate;
 	NSTimer *_animationTimer;
 	unsigned int _depth;
 	BOOL _autoFadeOut;
 	SEL _action;
 	id _target;
 	id _representedObject;
-	float _timeout;
+	NSTimeInterval _timeout;
 }
 
 - (id) initWithTextColor:(NSColor *)textColor 
 			   darkColor:(NSColor *)darkColor 
 			  lightColor:(NSColor *)lightColor 
 			 borderColor:(NSColor *)borderColor
-	  numExpectedBubbles:(int)numExpected 
-		  bubblePosition:(unsigned int)position;
+	  numExpectedBubbles:(NSInteger)numExpected 
+		  bubblePosition:(KABubblePosition)position;
 
 // position is a bitmask of the BUBBLE_* defines
 + (KABubbleWindowController *) bubbleWithTitle:(NSString *) title
                                           text:(id) text
                                           icon:(NSImage *) icon
-                                       timeout:(float) timeout
+                                       timeout:(NSTimeInterval) timeout
                                     lightColor:(NSColor *) lightColor
                                      darkColor:(NSColor *) darkColor
                                      textColor:(NSColor *) textColor
                                    borderColor:(NSColor *) borderColor
-							numExpectedBubbles:(int)numExpected
-								bubblePosition:(unsigned int)position;
+							numExpectedBubbles:(NSInteger)numExpected
+								bubblePosition:(KABubblePosition)position;
 
 - (void) startFadeIn;
 - (void) startFadeOut;
 
-- (BOOL) automaticallyFadesOut;
-- (void) setAutomaticallyFadesOut:(BOOL) autoFade;
+@property BOOL automaticallyFadesOut;
 
-- (id) target;
-- (void) setTarget:(id) object;
+@property (retain) id target;
 
-- (SEL) action;
-- (void) setAction:(SEL) selector;
+@property SEL action;
 
-- (id) representedObject;
-- (void) setRepresentedObject:(id) object;
+@property (retain) id representedObject;
 
-- (id) delegate;
-- (void) setDelegate:(id) delegate;
+@property (assign) id<KABubbleWindowControllerDelegate> delegate;
 
-- (void) setTimeout:(float) timeout;
-- (float) timeout;
+@property NSTimeInterval timeout;
 
 @end
 
-@interface NSObject (KABubbleWindowControllerDelegate)
+@protocol KABubbleWindowControllerDelegate <NSObject>
+@optional
 - (void) bubbleWillFadeIn:(KABubbleWindowController *) bubble;
 - (void) bubbleDidFadeIn:(KABubbleWindowController *) bubble;
 

@@ -20,19 +20,20 @@
 
 #import <Foundation/Foundation.h>
 #import "CDControl.h"
+#import "KABubbleWindowController.h"
 
-@interface CDBubbleControl : CDControl {
+@interface CDBubbleControl : CDControl <KABubbleWindowControllerDelegate> {
 	NSMutableArray *activeBubbles;
 	NSMutableArray *fadingBubbles;
 }
 
 // We really ought to stick this in a proper NSColor category
-+ (NSColor *) colorFromHex:(NSString *) hexValue alpha:(float)alpha;
++ (NSColor *) colorFromHex:(NSString *) hexValue alpha:(CGFloat)alpha;
 
-- (NSColor *) _colorForBubble:(int)i fromKey:(NSString *)key alpha:(float)alpha;
+- (NSColor *) _colorForBubble:(NSInteger)i fromKey:(NSString *)key alpha:(CGFloat)alpha;
 
 // returns an NSArray of NSImage's or nil if there's only one.
-- (NSArray *) _iconImages;
+- (NSArray<NSImage*> *) _iconImages;
 // try _iconImages first, then this.
 - (NSImage *) _iconImage;
 

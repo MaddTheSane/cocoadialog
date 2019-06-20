@@ -96,7 +96,7 @@
 				if (![options hasOpt:@"no-newline"] || i+1 < [rv count]) 
 				{
 					if (fh) {
-						[fh writeData:[[NSString stringWithString:@"\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+						[fh writeData:[@"\n" dataUsingEncoding:NSUTF8StringEncoding]];
 					}
 				}
 			}

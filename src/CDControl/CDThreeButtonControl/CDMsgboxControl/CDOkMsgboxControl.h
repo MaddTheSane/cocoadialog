@@ -21,7 +21,6 @@
 #import <Foundation/Foundation.h>
 #import "CDMsgboxControl.h"
 
-@interface CDOkMsgboxControl : CDMsgboxControl {
-}
+@interface CDOkMsgboxControl : CDMsgboxControl
 
 @end

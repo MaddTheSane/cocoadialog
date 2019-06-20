@@ -40,7 +40,6 @@
 		0E71DA1B0963B19500FF6F7C /* cocoadialog.icns in Resources */ = {isa = PBXBuildFile; fileRef = 0E71DA0A0963B19500FF6F7C /* cocoadialog.icns */; };
 		0E71DA1C0963B19500FF6F7C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0E71DA0C0963B19500FF6F7C /* InfoPlist.strings */; };
 		0E71DA1D0963B19500FF6F7C /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 0E71DA0E0963B19500FF6F7C /* MainMenu.nib */; };
-		0E71DA1F0963B19500FF6F7C /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E71DA120963B19500FF6F7C /* Info.plist */; };
 		0E71DA200963B19500FF6F7C /* Inputbox.nib in Resources */ = {isa = PBXBuildFile; fileRef = 0E71DA130963B19500FF6F7C /* Inputbox.nib */; };
 		0E71DA210963B19500FF6F7C /* Msgbox.nib in Resources */ = {isa = PBXBuildFile; fileRef = 0E71DA140963B19500FF6F7C /* Msgbox.nib */; };
 		0E71DA230963B19500FF6F7C /* PopUpButton.nib in Resources */ = {isa = PBXBuildFile; fileRef = 0E71DA160963B19500FF6F7C /* PopUpButton.nib */; };
@@ -81,108 +80,81 @@
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXBuildStyle section */
-		4A9504CCFFE6A4B311CA0CBA /* Development */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-				DEBUGGING_SYMBOLS = YES;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				OPTIMIZATION_CFLAGS = "-O0";
-				PRODUCT_NAME = CocoaDialog;
-				ZERO_LINK = YES;
-			};
-			name = Development;
-		};
-		4A9504CDFFE6A4B311CA0CBA /* Deployment */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				ZERO_LINK = NO;
-			};
-			name = Deployment;
-		};
-/* End PBXBuildStyle section */
-
 /* Begin PBXFileReference section */
 		0E02DC1E062C16AC00C594F1 /* COPYING */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = COPYING; sourceTree = "<group>"; };
 		0E53CECF0634B34100E74888 /* Changelog */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Changelog; sourceTree = "<group>"; };
-		0E71D9CF0963B12800FF6F7C /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppController.h; path = src/AppController.h; sourceTree = "<group>"; };
-		0E71D9D00963B12800FF6F7C /* CDControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDControl.h; path = src/CDControl.h; sourceTree = "<group>"; };
-		0E71D9D10963B12800FF6F7C /* CDFileSelectControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDFileSelectControl.h; path = src/CDControl/CDFileDialogControl/CDFileSelectControl.h; sourceTree = "<group>"; };
-		0E71D9D20963B12800FF6F7C /* CDInputboxControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDInputboxControl.h; path = src/CDControl/CDThreeButtonControl/CDInputboxControl.h; sourceTree = "<group>"; };
-		0E71D9D30963B12800FF6F7C /* CDMsgboxControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDMsgboxControl.h; path = src/CDControl/CDThreeButtonControl/CDMsgboxControl.h; sourceTree = "<group>"; };
-		0E71D9D40963B12800FF6F7C /* CDOkMsgboxControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDOkMsgboxControl.h; path = src/CDControl/CDThreeButtonControl/CDMsgboxControl/CDOkMsgboxControl.h; sourceTree = "<group>"; };
-		0E71D9D50963B12800FF6F7C /* CDOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDOptions.h; path = src/CDOptions.h; sourceTree = "<group>"; };
-		0E71D9D60963B12800FF6F7C /* CDPopUpButtonControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDPopUpButtonControl.h; path = src/CDControl/CDThreeButtonControl/CDPopUpButtonControl.h; sourceTree = "<group>"; };
-		0E71D9D70963B12800FF6F7C /* CDProgressbarControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDProgressbarControl.h; path = src/CDControl/CDProgressbarControl.h; sourceTree = "<group>"; };
-		0E71D9D80963B12800FF6F7C /* CDStandardInputboxControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDStandardInputboxControl.h; path = src/CDControl/CDThreeButtonControl/CDInputboxControl/CDStandardInputboxControl.h; sourceTree = "<group>"; };
-		0E71D9D90963B12800FF6F7C /* CDStandardPopUpButtonControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDStandardPopUpButtonControl.h; path = src/CDControl/CDThreeButtonControl/CDPopUpButtonControl/CDStandardPopUpButtonControl.h; sourceTree = "<group>"; };
-		0E71D9DA0963B12800FF6F7C /* CDTextboxControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDTextboxControl.h; path = src/CDControl/CDThreeButtonControl/CDTextboxControl.h; sourceTree = "<group>"; };
-		0E71D9DB0963B12800FF6F7C /* CDYesNoMsgboxControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDYesNoMsgboxControl.h; path = src/CDControl/CDThreeButtonControl/CDMsgboxControl/CDYesNoMsgboxControl.h; sourceTree = "<group>"; };
-		0E71D9EB0963B15300FF6F7C /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppController.m; path = src/AppController.m; sourceTree = "<group>"; };
-		0E71D9EC0963B15300FF6F7C /* CDControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDControl.m; path = src/CDControl.m; sourceTree = "<group>"; };
-		0E71D9ED0963B15300FF6F7C /* CDFileSelectControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDFileSelectControl.m; path = src/CDControl/CDFileDialogControl/CDFileSelectControl.m; sourceTree = "<group>"; };
-		0E71D9EE0963B15300FF6F7C /* CDInputboxControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDInputboxControl.m; path = src/CDControl/CDThreeButtonControl/CDInputboxControl.m; sourceTree = "<group>"; };
-		0E71D9EF0963B15300FF6F7C /* CDMsgboxControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDMsgboxControl.m; path = src/CDControl/CDThreeButtonControl/CDMsgboxControl.m; sourceTree = "<group>"; };
-		0E71D9F00963B15300FF6F7C /* CDOkMsgboxControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDOkMsgboxControl.m; path = src/CDControl/CDThreeButtonControl/CDMsgboxControl/CDOkMsgboxControl.m; sourceTree = "<group>"; };
-		0E71D9F10963B15300FF6F7C /* CDOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDOptions.m; path = src/CDOptions.m; sourceTree = "<group>"; };
-		0E71D9F20963B15300FF6F7C /* CDPopUpButtonControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDPopUpButtonControl.m; path = src/CDControl/CDThreeButtonControl/CDPopUpButtonControl.m; sourceTree = "<group>"; };
-		0E71D9F30963B15300FF6F7C /* CDProgressbarControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDProgressbarControl.m; path = src/CDControl/CDProgressbarControl.m; sourceTree = "<group>"; };
-		0E71D9F40963B15300FF6F7C /* CDStandardInputboxControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDStandardInputboxControl.m; path = src/CDControl/CDThreeButtonControl/CDInputboxControl/CDStandardInputboxControl.m; sourceTree = "<group>"; };
-		0E71D9F50963B15300FF6F7C /* CDStandardPopUpButtonControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDStandardPopUpButtonControl.m; path = src/CDControl/CDThreeButtonControl/CDPopUpButtonControl/CDStandardPopUpButtonControl.m; sourceTree = "<group>"; };
-		0E71D9F60963B15300FF6F7C /* CDTextboxControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDTextboxControl.m; path = src/CDControl/CDThreeButtonControl/CDTextboxControl.m; sourceTree = "<group>"; };
-		0E71D9F70963B15300FF6F7C /* CDYesNoMsgboxControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDYesNoMsgboxControl.m; path = src/CDControl/CDThreeButtonControl/CDMsgboxControl/CDYesNoMsgboxControl.m; sourceTree = "<group>"; };
+		0E71D9CF0963B12800FF6F7C /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
+		0E71D9D00963B12800FF6F7C /* CDControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDControl.h; sourceTree = "<group>"; };
+		0E71D9D10963B12800FF6F7C /* CDFileSelectControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDFileSelectControl.h; sourceTree = "<group>"; };
+		0E71D9D20963B12800FF6F7C /* CDInputboxControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDInputboxControl.h; sourceTree = "<group>"; };
+		0E71D9D30963B12800FF6F7C /* CDMsgboxControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMsgboxControl.h; sourceTree = "<group>"; };
+		0E71D9D40963B12800FF6F7C /* CDOkMsgboxControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDOkMsgboxControl.h; path = CDMsgboxControl/CDOkMsgboxControl.h; sourceTree = "<group>"; };
+		0E71D9D50963B12800FF6F7C /* CDOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDOptions.h; sourceTree = "<group>"; };
+		0E71D9D60963B12800FF6F7C /* CDPopUpButtonControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDPopUpButtonControl.h; sourceTree = "<group>"; };
+		0E71D9D70963B12800FF6F7C /* CDProgressbarControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDProgressbarControl.h; sourceTree = "<group>"; };
+		0E71D9D80963B12800FF6F7C /* CDStandardInputboxControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDStandardInputboxControl.h; path = CDInputboxControl/CDStandardInputboxControl.h; sourceTree = "<group>"; };
+		0E71D9D90963B12800FF6F7C /* CDStandardPopUpButtonControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDStandardPopUpButtonControl.h; path = CDPopUpButtonControl/CDStandardPopUpButtonControl.h; sourceTree = "<group>"; };
+		0E71D9DA0963B12800FF6F7C /* CDTextboxControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDTextboxControl.h; sourceTree = "<group>"; };
+		0E71D9DB0963B12800FF6F7C /* CDYesNoMsgboxControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDYesNoMsgboxControl.h; path = CDMsgboxControl/CDYesNoMsgboxControl.h; sourceTree = "<group>"; };
+		0E71D9EB0963B15300FF6F7C /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
+		0E71D9EC0963B15300FF6F7C /* CDControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDControl.m; sourceTree = "<group>"; };
+		0E71D9ED0963B15300FF6F7C /* CDFileSelectControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDFileSelectControl.m; sourceTree = "<group>"; };
+		0E71D9EE0963B15300FF6F7C /* CDInputboxControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDInputboxControl.m; sourceTree = "<group>"; };
+		0E71D9EF0963B15300FF6F7C /* CDMsgboxControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMsgboxControl.m; sourceTree = "<group>"; };
+		0E71D9F00963B15300FF6F7C /* CDOkMsgboxControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDOkMsgboxControl.m; path = CDMsgboxControl/CDOkMsgboxControl.m; sourceTree = "<group>"; };
+		0E71D9F10963B15300FF6F7C /* CDOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDOptions.m; sourceTree = "<group>"; };
+		0E71D9F20963B15300FF6F7C /* CDPopUpButtonControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDPopUpButtonControl.m; sourceTree = "<group>"; };
+		0E71D9F30963B15300FF6F7C /* CDProgressbarControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDProgressbarControl.m; sourceTree = "<group>"; };
+		0E71D9F40963B15300FF6F7C /* CDStandardInputboxControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDStandardInputboxControl.m; path = CDInputboxControl/CDStandardInputboxControl.m; sourceTree = "<group>"; };
+		0E71D9F50963B15300FF6F7C /* CDStandardPopUpButtonControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDStandardPopUpButtonControl.m; path = CDPopUpButtonControl/CDStandardPopUpButtonControl.m; sourceTree = "<group>"; };
+		0E71D9F60963B15300FF6F7C /* CDTextboxControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDTextboxControl.m; sourceTree = "<group>"; };
+		0E71D9F70963B15300FF6F7C /* CDYesNoMsgboxControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDYesNoMsgboxControl.m; path = CDMsgboxControl/CDYesNoMsgboxControl.m; sourceTree = "<group>"; };
 		0E71DA050963B16100FF6F7C /* CocoaDialog_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CocoaDialog_Prefix.pch; path = src/CocoaDialog_Prefix.pch; sourceTree = "<group>"; };
 		0E71DA060963B16100FF6F7C /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = src/main.m; sourceTree = "<group>"; };
-		0E71DA0A0963B19500FF6F7C /* cocoadialog.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = cocoadialog.icns; path = Resources/cocoadialog.icns; sourceTree = "<group>"; };
-		0E71DA0D0963B19500FF6F7C /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = InfoPlist.strings; sourceTree = "<group>"; };
-		0E71DA0F0963B19500FF6F7C /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = MainMenu.nib; sourceTree = "<group>"; };
-		0E71DA120963B19500FF6F7C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Info.plist; path = Resources/Info.plist; sourceTree = "<group>"; };
-		0E71DA130963B19500FF6F7C /* Inputbox.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Inputbox.nib; path = Resources/Inputbox.nib; sourceTree = "<group>"; };
-		0E71DA140963B19500FF6F7C /* Msgbox.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Msgbox.nib; path = Resources/Msgbox.nib; sourceTree = "<group>"; };
-		0E71DA160963B19500FF6F7C /* PopUpButton.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = PopUpButton.nib; path = Resources/PopUpButton.nib; sourceTree = "<group>"; };
-		0E71DA180963B19500FF6F7C /* Progressbar.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Progressbar.nib; path = Resources/Progressbar.nib; sourceTree = "<group>"; };
-		0E71DA190963B19500FF6F7C /* SecureInputbox.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = SecureInputbox.nib; path = Resources/SecureInputbox.nib; sourceTree = "<group>"; };
-		0E71DA1A0963B19500FF6F7C /* Textbox.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Textbox.nib; path = Resources/Textbox.nib; sourceTree = "<group>"; };
-		0E77E9B30963C46500D651A3 /* KABubbleWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KABubbleWindow.m; path = src/KABubbleWindow.m; sourceTree = "<group>"; };
-		0E77E9B40963C46500D651A3 /* KABubbleWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KABubbleWindowController.m; path = src/KABubbleWindowController.m; sourceTree = "<group>"; };
-		0E77E9B50963C46500D651A3 /* KABubbleWindowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KABubbleWindowView.m; path = src/KABubbleWindowView.m; sourceTree = "<group>"; };
-		0E77E9B90963C47A00D651A3 /* KABubbleWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KABubbleWindow.h; path = src/KABubbleWindow.h; sourceTree = "<group>"; };
-		0E77E9BA0963C47A00D651A3 /* KABubbleWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KABubbleWindowController.h; path = src/KABubbleWindowController.h; sourceTree = "<group>"; };
-		0E77E9BB0963C47A00D651A3 /* KABubbleWindowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KABubbleWindowView.h; path = src/KABubbleWindowView.h; sourceTree = "<group>"; };
-		0E77EA480964265900D651A3 /* CDBubbleControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDBubbleControl.m; path = src/CDControl/CDBubbleControl.m; sourceTree = "<group>"; };
-		0E77EC040965C4E000D651A3 /* atom.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = atom.icns; path = Resources/atom.icns; sourceTree = "<group>"; };
-		0E77EC050965C4E000D651A3 /* computer.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = computer.icns; path = Resources/computer.icns; sourceTree = "<group>"; };
-		0E77EC060965C4E000D651A3 /* document.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = document.icns; path = Resources/document.icns; sourceTree = "<group>"; };
-		0E77EC070965C4E000D651A3 /* find.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = find.icns; path = Resources/find.icns; sourceTree = "<group>"; };
-		0E77EC080965C4E000D651A3 /* finder.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = finder.icns; path = Resources/finder.icns; sourceTree = "<group>"; };
-		0E77EC090965C4E000D651A3 /* firewire.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = firewire.icns; path = Resources/firewire.icns; sourceTree = "<group>"; };
-		0E77EC0A0965C4E000D651A3 /* gear.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = gear.icns; path = Resources/gear.icns; sourceTree = "<group>"; };
-		0E77EC0B0965C4E000D651A3 /* globe.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = globe.icns; path = Resources/globe.icns; sourceTree = "<group>"; };
-		0E77EC0C0965C4E000D651A3 /* heart.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = heart.icns; path = Resources/heart.icns; sourceTree = "<group>"; };
-		0E77EC0D0965C4E000D651A3 /* hourglass.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = hourglass.icns; path = Resources/hourglass.icns; sourceTree = "<group>"; };
-		0E77EC0E0965C4E000D651A3 /* info.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = info.icns; path = Resources/info.icns; sourceTree = "<group>"; };
-		0E77EC0F0965C4E000D651A3 /* ipod.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = ipod.icns; path = Resources/ipod.icns; sourceTree = "<group>"; };
-		0E77EC100965C4E000D651A3 /* person.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = person.icns; path = Resources/person.icns; sourceTree = "<group>"; };
-		0E77EC120965C4E000D651A3 /* sound.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = sound.icns; path = Resources/sound.icns; sourceTree = "<group>"; };
-		0E77EC130965C4E000D651A3 /* x.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = x.icns; path = Resources/x.icns; sourceTree = "<group>"; };
-		0E77EC81096682AD00D651A3 /* folder.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = folder.icns; path = Resources/folder.icns; sourceTree = "<group>"; };
-		0EC9B67C09B126D500956684 /* CDFileDialogControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDFileDialogControl.h; path = src/CDControl/CDFileDialogControl.h; sourceTree = "<group>"; };
-		0EC9B67D09B126D500956684 /* CDFileDialogControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDFileDialogControl.m; path = src/CDControl/CDFileDialogControl.m; sourceTree = "<group>"; };
-		0EC9B68109B1273100956684 /* CDFileSaveControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDFileSaveControl.h; path = src/CDControl/CDFileDialogControl/CDFileSaveControl.h; sourceTree = "<group>"; };
-		0EC9B68309B1274100956684 /* CDFileSaveControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDFileSaveControl.m; path = src/CDControl/CDFileDialogControl/CDFileSaveControl.m; sourceTree = "<group>"; };
-		0EE0B42A0968018A0070F494 /* CDBubbleControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDBubbleControl.h; path = src/CDControl/CDBubbleControl.h; sourceTree = "<group>"; };
-		0EE0B433096802B90070F494 /* CDThreeButtonControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDThreeButtonControl.m; path = src/CDControl/CDThreeButtonControl.m; sourceTree = "<group>"; };
-		0EE0B435096802CF0070F494 /* CDThreeButtonControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDThreeButtonControl.h; path = src/CDControl/CDThreeButtonControl.h; sourceTree = "<group>"; };
-		0EE0B5CF09681BF00070F494 /* hazard.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = hazard.icns; path = Resources/hazard.icns; sourceTree = "<group>"; };
+		0E71DA0A0963B19500FF6F7C /* cocoadialog.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = cocoadialog.icns; sourceTree = "<group>"; };
+		0E71DA120963B19500FF6F7C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E71DA130963B19500FF6F7C /* Inputbox.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = Inputbox.nib; sourceTree = "<group>"; };
+		0E71DA140963B19500FF6F7C /* Msgbox.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = Msgbox.nib; sourceTree = "<group>"; };
+		0E71DA160963B19500FF6F7C /* PopUpButton.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = PopUpButton.nib; sourceTree = "<group>"; };
+		0E71DA180963B19500FF6F7C /* Progressbar.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = Progressbar.nib; sourceTree = "<group>"; };
+		0E71DA190963B19500FF6F7C /* SecureInputbox.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = SecureInputbox.nib; sourceTree = "<group>"; };
+		0E71DA1A0963B19500FF6F7C /* Textbox.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = Textbox.nib; sourceTree = "<group>"; };
+		0E77E9B30963C46500D651A3 /* KABubbleWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KABubbleWindow.m; sourceTree = "<group>"; };
+		0E77E9B40963C46500D651A3 /* KABubbleWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KABubbleWindowController.m; sourceTree = "<group>"; };
+		0E77E9B50963C46500D651A3 /* KABubbleWindowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KABubbleWindowView.m; sourceTree = "<group>"; };
+		0E77E9B90963C47A00D651A3 /* KABubbleWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KABubbleWindow.h; sourceTree = "<group>"; };
+		0E77E9BA0963C47A00D651A3 /* KABubbleWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KABubbleWindowController.h; sourceTree = "<group>"; };
+		0E77E9BB0963C47A00D651A3 /* KABubbleWindowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KABubbleWindowView.h; sourceTree = "<group>"; };
+		0E77EA480964265900D651A3 /* CDBubbleControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDBubbleControl.m; sourceTree = "<group>"; };
+		0E77EC040965C4E000D651A3 /* atom.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = atom.icns; sourceTree = "<group>"; };
+		0E77EC050965C4E000D651A3 /* computer.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = computer.icns; sourceTree = "<group>"; };
+		0E77EC060965C4E000D651A3 /* document.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = document.icns; sourceTree = "<group>"; };
+		0E77EC070965C4E000D651A3 /* find.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = find.icns; sourceTree = "<group>"; };
+		0E77EC080965C4E000D651A3 /* finder.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = finder.icns; sourceTree = "<group>"; };
+		0E77EC090965C4E000D651A3 /* firewire.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = firewire.icns; sourceTree = "<group>"; };
+		0E77EC0A0965C4E000D651A3 /* gear.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = gear.icns; sourceTree = "<group>"; };
+		0E77EC0B0965C4E000D651A3 /* globe.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = globe.icns; sourceTree = "<group>"; };
+		0E77EC0C0965C4E000D651A3 /* heart.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = heart.icns; sourceTree = "<group>"; };
+		0E77EC0D0965C4E000D651A3 /* hourglass.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = hourglass.icns; sourceTree = "<group>"; };
+		0E77EC0E0965C4E000D651A3 /* info.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = info.icns; sourceTree = "<group>"; };
+		0E77EC0F0965C4E000D651A3 /* ipod.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = ipod.icns; sourceTree = "<group>"; };
+		0E77EC100965C4E000D651A3 /* person.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = person.icns; sourceTree = "<group>"; };
+		0E77EC120965C4E000D651A3 /* sound.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = sound.icns; sourceTree = "<group>"; };
+		0E77EC130965C4E000D651A3 /* x.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = x.icns; sourceTree = "<group>"; };
+		0E77EC81096682AD00D651A3 /* folder.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = folder.icns; sourceTree = "<group>"; };
+		0EC9B67C09B126D500956684 /* CDFileDialogControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDFileDialogControl.h; sourceTree = "<group>"; };
+		0EC9B67D09B126D500956684 /* CDFileDialogControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDFileDialogControl.m; sourceTree = "<group>"; };
+		0EC9B68109B1273100956684 /* CDFileSaveControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDFileSaveControl.h; sourceTree = "<group>"; };
+		0EC9B68309B1274100956684 /* CDFileSaveControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDFileSaveControl.m; sourceTree = "<group>"; };
+		0EE0B42A0968018A0070F494 /* CDBubbleControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDBubbleControl.h; sourceTree = "<group>"; };
+		0EE0B433096802B90070F494 /* CDThreeButtonControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDThreeButtonControl.m; sourceTree = "<group>"; };
+		0EE0B435096802CF0070F494 /* CDThreeButtonControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDThreeButtonControl.h; sourceTree = "<group>"; };
+		0EE0B5CF09681BF00070F494 /* hazard.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = hazard.icns; sourceTree = "<group>"; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		552CB6DB22BC39CE0012F9FC /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		552CB6DC22BC39CE0012F9FC /* en */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = en; path = en.lproj/MainMenu.nib; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* CocoaDialog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoaDialog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -201,15 +173,22 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				0E71D9CF0963B12800FF6F7C /* AppController.h */,
 				0E71D9EB0963B15300FF6F7C /* AppController.m */,
+				0E77E9B90963C47A00D651A3 /* KABubbleWindow.h */,
 				0E77E9B30963C46500D651A3 /* KABubbleWindow.m */,
+				0E77E9BA0963C47A00D651A3 /* KABubbleWindowController.h */,
 				0E77E9B40963C46500D651A3 /* KABubbleWindowController.m */,
+				0E77E9BB0963C47A00D651A3 /* KABubbleWindowView.h */,
 				0E77E9B50963C46500D651A3 /* KABubbleWindowView.m */,
+				0E71D9D50963B12800FF6F7C /* CDOptions.h */,
 				0E71D9F10963B15300FF6F7C /* CDOptions.m */,
+				0E71D9D00963B12800FF6F7C /* CDControl.h */,
 				0E71D9EC0963B15300FF6F7C /* CDControl.m */,
 				0EE0B431096802440070F494 /* CDControl */,
 			);
 			name = Classes;
+			path = src;
 			sourceTree = "<group>";
 		};
 		0E77EC240965C4EB00D651A3 /* Icons */ = {
@@ -237,92 +216,55 @@
 			name = Icons;
 			sourceTree = "<group>";
 		};
-		0E91738E06299DF400E97C20 /* Headers */ = {
-			isa = PBXGroup;
-			children = (
-				0E71D9CF0963B12800FF6F7C /* AppController.h */,
-				0E71D9D50963B12800FF6F7C /* CDOptions.h */,
-				0E77E9B90963C47A00D651A3 /* KABubbleWindow.h */,
-				0E77E9BA0963C47A00D651A3 /* KABubbleWindowController.h */,
-				0E77E9BB0963C47A00D651A3 /* KABubbleWindowView.h */,
-				0E71D9D00963B12800FF6F7C /* CDControl.h */,
-				0EE0B42F096801C70070F494 /* CDControl */,
-			);
-			name = Headers;
-			sourceTree = "<group>";
-		};
 		0EC9B67B09B126BC00956684 /* CDFileDialogControl */ = {
 			isa = PBXGroup;
 			children = (
+				0EC9B68109B1273100956684 /* CDFileSaveControl.h */,
 				0EC9B68309B1274100956684 /* CDFileSaveControl.m */,
+				0E71D9D10963B12800FF6F7C /* CDFileSelectControl.h */,
 				0E71D9ED0963B15300FF6F7C /* CDFileSelectControl.m */,
 			);
-			name = CDFileDialogControl;
-			sourceTree = "<group>";
-		};
-		0EC9B68009B126DF00956684 /* CDFileDialogControl */ = {
-			isa = PBXGroup;
-			children = (
-				0EC9B68109B1273100956684 /* CDFileSaveControl.h */,
-				0E71D9D10963B12800FF6F7C /* CDFileSelectControl.h */,
-			);
-			name = CDFileDialogControl;
-			sourceTree = "<group>";
-		};
-		0EE0B42F096801C70070F494 /* CDControl */ = {
-			isa = PBXGroup;
-			children = (
-				0EC9B67C09B126D500956684 /* CDFileDialogControl.h */,
-				0EC9B68009B126DF00956684 /* CDFileDialogControl */,
-				0EE0B42A0968018A0070F494 /* CDBubbleControl.h */,
-				0E71D9D70963B12800FF6F7C /* CDProgressbarControl.h */,
-				0EE0B435096802CF0070F494 /* CDThreeButtonControl.h */,
-				0EE0B430096801EA0070F494 /* CDThreeButtonControl */,
-			);
-			name = CDControl;
-			sourceTree = "<group>";
-		};
-		0EE0B430096801EA0070F494 /* CDThreeButtonControl */ = {
-			isa = PBXGroup;
-			children = (
-				0E71D9D20963B12800FF6F7C /* CDInputboxControl.h */,
-				0E71D9D30963B12800FF6F7C /* CDMsgboxControl.h */,
-				0E71D9D40963B12800FF6F7C /* CDOkMsgboxControl.h */,
-				0E71D9D60963B12800FF6F7C /* CDPopUpButtonControl.h */,
-				0E71D9D80963B12800FF6F7C /* CDStandardInputboxControl.h */,
-				0E71D9D90963B12800FF6F7C /* CDStandardPopUpButtonControl.h */,
-				0E71D9DA0963B12800FF6F7C /* CDTextboxControl.h */,
-				0E71D9DB0963B12800FF6F7C /* CDYesNoMsgboxControl.h */,
-			);
-			name = CDThreeButtonControl;
+			path = CDFileDialogControl;
 			sourceTree = "<group>";
 		};
 		0EE0B431096802440070F494 /* CDControl */ = {
 			isa = PBXGroup;
 			children = (
+				0EC9B67C09B126D500956684 /* CDFileDialogControl.h */,
 				0EC9B67D09B126D500956684 /* CDFileDialogControl.m */,
 				0EC9B67B09B126BC00956684 /* CDFileDialogControl */,
+				0EE0B42A0968018A0070F494 /* CDBubbleControl.h */,
 				0E77EA480964265900D651A3 /* CDBubbleControl.m */,
+				0E71D9D70963B12800FF6F7C /* CDProgressbarControl.h */,
 				0E71D9F30963B15300FF6F7C /* CDProgressbarControl.m */,
+				0EE0B435096802CF0070F494 /* CDThreeButtonControl.h */,
 				0EE0B433096802B90070F494 /* CDThreeButtonControl.m */,
 				0EE0B432096802740070F494 /* CDThreeButtonControl */,
 			);
-			name = CDControl;
+			path = CDControl;
 			sourceTree = "<group>";
 		};
 		0EE0B432096802740070F494 /* CDThreeButtonControl */ = {
 			isa = PBXGroup;
 			children = (
+				0E71D9D20963B12800FF6F7C /* CDInputboxControl.h */,
 				0E71D9EE0963B15300FF6F7C /* CDInputboxControl.m */,
+				0E71D9D30963B12800FF6F7C /* CDMsgboxControl.h */,
 				0E71D9EF0963B15300FF6F7C /* CDMsgboxControl.m */,
+				0E71D9D40963B12800FF6F7C /* CDOkMsgboxControl.h */,
 				0E71D9F00963B15300FF6F7C /* CDOkMsgboxControl.m */,
+				0E71D9D60963B12800FF6F7C /* CDPopUpButtonControl.h */,
 				0E71D9F20963B15300FF6F7C /* CDPopUpButtonControl.m */,
+				0E71D9D80963B12800FF6F7C /* CDStandardInputboxControl.h */,
 				0E71D9F40963B15300FF6F7C /* CDStandardInputboxControl.m */,
+				0E71D9D90963B12800FF6F7C /* CDStandardPopUpButtonControl.h */,
 				0E71D9F50963B15300FF6F7C /* CDStandardPopUpButtonControl.m */,
+				0E71D9DA0963B12800FF6F7C /* CDTextboxControl.h */,
 				0E71D9F60963B15300FF6F7C /* CDTextboxControl.m */,
+				0E71D9DB0963B12800FF6F7C /* CDYesNoMsgboxControl.h */,
 				0E71D9F70963B15300FF6F7C /* CDYesNoMsgboxControl.m */,
 			);
-			name = CDThreeButtonControl;
+			path = CDThreeButtonControl;
 			sourceTree = "<group>";
 		};
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
@@ -355,7 +297,6 @@
 			children = (
 				0E53CECF0634B34100E74888 /* Changelog */,
 				0E02DC1E062C16AC00C594F1 /* COPYING */,
-				0E91738E06299DF400E97C20 /* Headers */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -388,7 +329,7 @@
 				0E71DA190963B19500FF6F7C /* SecureInputbox.nib */,
 				0E71DA1A0963B19500FF6F7C /* Textbox.nib */,
 			);
-			name = Resources;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
@@ -445,30 +386,6 @@
 			);
 			buildRules = (
 			);
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = "";
-				GCC_ENABLE_TRIGRAPHS = NO;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = src/CocoaDialog_Prefix.pch;
-				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
-				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
-				GCC_WARN_UNKNOWN_PRAGMAS = NO;
-				HEADER_SEARCH_PATHS = "";
-				INFOPLIST_FILE = Resources/Info.plist;
-				INSTALL_PATH = "$(HOME)/Applications";
-				LIBRARY_SEARCH_PATHS = "";
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "";
-				PRODUCT_NAME = CocoaDialog;
-				SECTORDER_FLAGS = "";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-				);
-				WRAPPER_EXTENSION = app;
-			};
 			dependencies = (
 			);
 			name = CocoaDialog;
@@ -482,16 +399,21 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
-			buildConfigurationList = 0E77E9A30963C37C00D651A3 /* Build configuration list for PBXProject "CocoaDialog" */;
-			buildSettings = {
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
 			};
-			buildStyles = (
-				4A9504CCFFE6A4B311CA0CBA /* Development */,
-				4A9504CDFFE6A4B311CA0CBA /* Deployment */,
-			);
+			buildConfigurationList = 0E77E9A30963C37C00D651A3 /* Build configuration list for PBXProject "CocoaDialog" */;
+			compatibilityVersion = "Xcode 2.4";
+			developmentRegion = en;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+				Base,
+			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CocoaDialog */;
 			projectDirPath = "";
+			projectRoot = "";
 			targets = (
 				8D1107260486CEB800E47090 /* CocoaDialog */,
 			);
@@ -508,7 +430,6 @@
 				0E71DA1B0963B19500FF6F7C /* cocoadialog.icns in Resources */,
 				0E71DA1C0963B19500FF6F7C /* InfoPlist.strings in Resources */,
 				0E71DA1D0963B19500FF6F7C /* MainMenu.nib in Resources */,
-				0E71DA1F0963B19500FF6F7C /* Info.plist in Resources */,
 				0E71DA200963B19500FF6F7C /* Inputbox.nib in Resources */,
 				0E71DA210963B19500FF6F7C /* Msgbox.nib in Resources */,
 				0E71DA230963B19500FF6F7C /* PopUpButton.nib in Resources */,
@@ -572,32 +493,30 @@
 		0E71DA0C0963B19500FF6F7C /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				0E71DA0D0963B19500FF6F7C /* English */,
+				552CB6DB22BC39CE0012F9FC /* en */,
 			);
 			name = InfoPlist.strings;
-			path = Resources/English.lproj;
 			sourceTree = "<group>";
 		};
 		0E71DA0E0963B19500FF6F7C /* MainMenu.nib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				0E71DA0F0963B19500FF6F7C /* English */,
+				552CB6DC22BC39CE0012F9FC /* en */,
 			);
 			name = MainMenu.nib;
-			path = Resources/English.lproj;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		0E77E9A00963C37C00D651A3 /* Development */ = {
+		0E77E9A00963C37C00D651A3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUGGING_SYMBOLS = YES;
 				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_ENABLE_TRIGRAPHS = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -613,6 +532,7 @@
 				OPTIMIZATION_CFLAGS = "-O0";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = org.sporkstorms.CocoaDialog;
 				PRODUCT_NAME = CocoaDialog;
 				SECTORDER_FLAGS = "";
 				WARNING_CFLAGS = (
@@ -623,14 +543,14 @@
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = YES;
 			};
-			name = Development;
+			name = Debug;
 		};
-		0E77E9A10963C37C00D651A3 /* Deployment */ = {
+		0E77E9A10963C37C00D651A3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = "";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_ENABLE_TRIGRAPHS = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -644,7 +564,7 @@
 				LIBRARY_SEARCH_PATHS = "";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
-				PREBINDING = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = org.sporkstorms.CocoaDialog;
 				PRODUCT_NAME = CocoaDialog;
 				SECTORDER_FLAGS = "";
 				WARNING_CFLAGS = (
@@ -655,67 +575,82 @@
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = NO;
 			};
-			name = Deployment;
+			name = Release;
 		};
-		0E77E9A20963C37C00D651A3 /* Default */ = {
+		0E77E9A40963C37C00D651A3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = "";
-				GCC_ENABLE_TRIGRAPHS = NO;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = src/CocoaDialog_Prefix.pch;
-				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
-				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
-				GCC_WARN_UNKNOWN_PRAGMAS = NO;
-				HEADER_SEARCH_PATHS = "";
-				INFOPLIST_FILE = Resources/Info.plist;
-				INSTALL_PATH = "$(HOME)/Applications";
-				LIBRARY_SEARCH_PATHS = "";
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "";
-				PRODUCT_NAME = CocoaDialog;
-				SECTORDER_FLAGS = "";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-				);
-				WRAPPER_EXTENSION = app;
-			};
-			name = Default;
-		};
-		0E77E9A40963C37C00D651A3 /* Development */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = CDControl;
-				MACOSX_DEPLOYMENT_TARGET = 10.4;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
 			};
-			name = Development;
+			name = Debug;
 		};
-		0E77E9A50963C37C00D651A3 /* Deployment */ = {
+		0E77E9A50963C37C00D651A3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = CDControl;
-				MACOSX_DEPLOYMENT_TARGET = 10.4;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
 				USER_HEADER_SEARCH_PATHS = "";
 			};
-			name = Deployment;
-		};
-		0E77E9A60963C37C00D651A3 /* Default */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				HEADER_SEARCH_PATHS = CDControl;
-				MACOSX_DEPLOYMENT_TARGET = 10.4;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
-			};
-			name = Default;
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
@@ -723,22 +658,20 @@
 		0E77E99F0963C37C00D651A3 /* Build configuration list for PBXNativeTarget "CocoaDialog" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0E77E9A00963C37C00D651A3 /* Development */,
-				0E77E9A10963C37C00D651A3 /* Deployment */,
-				0E77E9A20963C37C00D651A3 /* Default */,
+				0E77E9A00963C37C00D651A3 /* Debug */,
+				0E77E9A10963C37C00D651A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Default;
+			defaultConfigurationName = Release;
 		};
 		0E77E9A30963C37C00D651A3 /* Build configuration list for PBXProject "CocoaDialog" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0E77E9A40963C37C00D651A3 /* Development */,
-				0E77E9A50963C37C00D651A3 /* Deployment */,
-				0E77E9A60963C37C00D651A3 /* Default */,
+				0E77E9A40963C37C00D651A3 /* Debug */,
+				0E77E9A50963C37C00D651A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Default;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

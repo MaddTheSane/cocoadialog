@@ -228,7 +228,7 @@
 				break;
 
 			if ([options hasOpt:@"indeterminate"])
-				[progressBar animate:self];
+				[progressBar startAnimation:self];
 
 			if (_shouldEndSession) {
 				FD_CLR([stdinFH fileDescriptor], &rfds);

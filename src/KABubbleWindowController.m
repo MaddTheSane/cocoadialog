@@ -23,11 +23,11 @@ static unsigned int bubbleWindowDepth = 0;
 */
 
 + (KABubbleWindowController *) bubbleWithTitle:(NSString *) title
-	text:(id) text icon:(NSImage *) icon timeout:(float) timeout
+	text:(id) text icon:(NSImage *) icon timeout:(NSTimeInterval) timeout
 	lightColor:(NSColor *)lightColor darkColor:(NSColor *)darkColor
 	textColor:(NSColor *)textColor borderColor:(NSColor *)borderColor
-							numExpectedBubbles:(int)numExpected
-								bubblePosition:(unsigned int)position
+							numExpectedBubbles:(NSInteger)numExpected
+								bubblePosition:(KABubblePosition)position
 {
 	id ret = [[[self alloc] initWithTextColor:textColor darkColor:darkColor lightColor:lightColor borderColor:borderColor numExpectedBubbles:numExpected bubblePosition:position] autorelease];
 	[ret setTitle:title];
@@ -42,12 +42,12 @@ static unsigned int bubbleWindowDepth = 0;
 			   darkColor:(NSColor *)darkColor 
 			  lightColor:(NSColor *)lightColor 
 			 borderColor:(NSColor *)borderColor 
-	  numExpectedBubbles:(int)numExpected
-		  bubblePosition:(unsigned int)position
+	  numExpectedBubbles:(NSInteger)numExpected
+		  bubblePosition:(KABubblePosition)position
 {
 	extern unsigned int bubbleWindowDepth;
 
-	NSPanel *panel = [[[NSPanel alloc] initWithContentRect:NSMakeRect( 0., 0., 270., 65. ) styleMask:NSBorderlessWindowMask backing:NSBackingStoreBuffered defer:NO] autorelease];
+	NSPanel *panel = [[[NSPanel alloc] initWithContentRect:NSMakeRect( 0., 0., 270., 65. ) styleMask:NSWindowStyleMaskBorderless backing:NSBackingStoreBuffered defer:NO] autorelease];
 	[panel setBecomesKeyOnlyIfNeeded:YES];
 	[panel setHidesOnDeactivate:NO];
 	[panel setBackgroundColor:[NSColor clearColor]];
@@ -71,10 +71,10 @@ static unsigned int bubbleWindowDepth = 0;
 
 	NSRect screen = [[NSScreen mainScreen] visibleFrame];
 	
-	float leftPoint = 0.;
-	float topPoint = 0.;
+	CGFloat leftPoint = 0.;
+	CGFloat topPoint = 0.;
 	// Find left position for bubble
-	if (position & BUBBLE_HORIZ_LEFT) {
+	if ((position & 3) == BUBBLE_HORIZ_LEFT) {
 		leftPoint = NSMinX(screen) + KABubblePadding;
 	} else if (position & BUBBLE_HORIZ_CENTER) {
 		leftPoint = (NSWidth(screen)-NSWidth([panel frame]))/2 - KABubblePadding;
@@ -193,55 +193,23 @@ static unsigned int bubbleWindowDepth = 0;
 
 #pragma mark -
 
-- (BOOL) automaticallyFadesOut {
-	return _autoFadeOut;
-}
-
-- (void) setAutomaticallyFadesOut:(BOOL) autoFade {
-	_autoFadeOut = autoFade;
-}
+@synthesize automaticallyFadesOut=_autoFadeOut;
 
 #pragma mark -
 
-- (id) target {
-	return _target;
-}
-
-- (void) setTarget:(id) object {
-	[_target autorelease];
-	_target = [object retain];
-}
+@synthesize target=_target;
 
 #pragma mark -
 
-- (SEL) action {
-	return _action;
-}
-
-- (void) setAction:(SEL) selector {
-	_action = selector;
-}
+@synthesize action=_action;
 
 #pragma mark -
 
-- (id) representedObject {
-	return _representedObject;
-}
-
-- (void) setRepresentedObject:(id) object {
-	[_representedObject autorelease];
-	_representedObject = [object retain];
-}
+@synthesize representedObject=_representedObject;
 
 #pragma mark -
 
-- (id) delegate {
-	return _delegate;
-}
-
-- (void) setDelegate:(id) delegate {
-	_delegate = delegate;
-}
+@synthesize delegate=_delegate;
 
 #pragma mark -
 
@@ -264,13 +232,7 @@ static unsigned int bubbleWindowDepth = 0;
 
 
 #pragma mark -
-- (void) setTimeout:(float) timeout
-{
-	_timeout = timeout;
-}
-- (float) timeout
-{
-	return _timeout;
-}
+
+@synthesize timeout=_timeout;
 
 @end

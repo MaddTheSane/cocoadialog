@@ -5,11 +5,11 @@
 #import "KABubbleWindowView.h"
 
 // info needs to be a KABubbleWindowView with rgb+alpha set.
-void KABubbleShadeInterpolate( void *info, float const *inData, float *outData ) {
+void KABubbleShadeInterpolate( void *info, CGFloat const *inData, CGFloat *outData ) {
 	// These 2 will always return an array of 4 floats
-	const float *dark = [(KABubbleWindowView *)info darkColorFloat];
-	const float *light = [(KABubbleWindowView *)info lightColorFloat];
-	float a = inData[0];
+	const CGFloat *dark = [(KABubbleWindowView *)info darkColorFloat];
+	const CGFloat *light = [(KABubbleWindowView *)info lightColorFloat];
+	CGFloat a = inData[0];
 	int i = 0;
 
 	for( i = 0; i < 4; i++ )
@@ -19,6 +19,11 @@ void KABubbleShadeInterpolate( void *info, float const *inData, float *outData )
 #pragma mark -
 
 @implementation KABubbleWindowView
+@synthesize darkColor=_darkColor;
+@synthesize lightColor=_lightColor;
+@synthesize textColor=_textColor;
+@synthesize borderColor=_borderColor;
+
 - (id) initWithFrame:(NSRect) frame {
 	if( self = [super initWithFrame:frame] ) {
 		_icon = nil;
@@ -59,11 +64,11 @@ void KABubbleShadeInterpolate( void *info, float const *inData, float *outData )
 	[[NSColor clearColor] set];
 	NSRectFill( [self frame] );
 
-	float lineWidth = 4.;
+	CGFloat lineWidth = 4.;
 	NSBezierPath *path = [NSBezierPath bezierPath];
 	[path setLineWidth:lineWidth];
 
-	float radius = 9.;
+	CGFloat radius = 9.;
 	NSRect irect = NSInsetRect( [self bounds], radius + lineWidth, radius + lineWidth );
 	[path appendBezierPathWithArcWithCenter:NSMakePoint( NSMinX( irect ), NSMinY( irect ) ) radius:radius startAngle:180. endAngle:270.];
 	[path appendBezierPathWithArcWithCenter:NSMakePoint( NSMaxX( irect ), NSMinY( irect ) ) radius:radius startAngle:270. endAngle:360.];
@@ -79,8 +84,8 @@ void KABubbleShadeInterpolate( void *info, float const *inData, float *outData )
 	CGFunctionRef function = CGFunctionCreate( self, 1, NULL, 4, NULL, &callbacks );
 	CGColorSpaceRef cspace = CGColorSpaceCreateDeviceRGB();
 
-	float srcX = NSMinX( [self bounds] ), srcY = NSMinY( [self bounds] );
-	float dstX = NSMinX( [self bounds] ), dstY = NSMaxY( [self bounds] );
+	CGFloat srcX = NSMinX( [self bounds] ), srcY = NSMinY( [self bounds] );
+	CGFloat dstX = NSMinX( [self bounds] ), dstY = NSMaxY( [self bounds] );
 	CGShadingRef shading = CGShadingCreateAxial( cspace, CGPointMake( srcX, srcY ), CGPointMake( dstX, dstY ), function, false, false );
 
 	CGContextDrawShading( [[NSGraphicsContext currentContext] graphicsPort], shading );
@@ -98,7 +103,7 @@ void KABubbleShadeInterpolate( void *info, float const *inData, float *outData )
 	[_text drawInRect:NSMakeRect( 55., 10., 200., 30. )];
 
 	if( [_icon size].width > 32. || [_icon size].height > 32. ) { // Assume a square image.
-		NSImageRep *sourceImageRep = [_icon bestRepresentationForDevice:nil];
+		NSImageRep *sourceImageRep = [_icon bestRepresentationForRect:NSZeroRect context:nil hints:nil];
 		[_icon autorelease];
 		_icon = [[NSImage alloc] initWithSize:NSMakeSize( 32., 32. )];
 		[_icon lockFocus];
@@ -107,7 +112,7 @@ void KABubbleShadeInterpolate( void *info, float const *inData, float *outData )
 		[_icon unlockFocus];
 	}
 
-	[_icon compositeToPoint:NSMakePoint( 15., 20. ) operation:NSCompositeSourceAtop fraction:1.];
+	[_icon drawAtPoint:NSMakePoint( 15., 20. ) fromRect:NSZeroRect operation:NSCompositingOperationSourceAtop fraction:1.];
 
 	[[self window] invalidateShadow];
 }
@@ -120,11 +125,15 @@ void KABubbleShadeInterpolate( void *info, float const *inData, float *outData )
 	[self setNeedsDisplay:YES];
 }
 
+@synthesize icon=_icon;
+
 - (void) setTitle:(NSString *) title {
 	[_title autorelease];
 	_title = [title copy];
 	[self setNeedsDisplay:YES];
 }
+
+@synthesize title=_title;
 
 - (void) setAttributedText:(NSAttributedString *) text {
 	[_text autorelease];
@@ -141,7 +150,7 @@ void KABubbleShadeInterpolate( void *info, float const *inData, float *outData )
 	} else {
 		color = [NSColor controlTextColor];
 	}
-	_text = [[NSAttributedString alloc] initWithString:text attributes:[NSDictionary dictionaryWithObjectsAndKeys:[NSFont messageFontOfSize:11.], NSFontAttributeName, color, NSForegroundColorAttributeName, nil]];
+	_text = [[NSAttributedString alloc] initWithString:text attributes:[NSDictionary dictionaryWithObjectsAndKeys:[NSFont messageFontOfSize:NSFont.smallSystemFontSize], NSFontAttributeName, color, NSForegroundColorAttributeName, nil]];
 	[self setNeedsDisplay:YES];
 }
 
@@ -151,19 +160,15 @@ void KABubbleShadeInterpolate( void *info, float const *inData, float *outData )
 	[_darkColor release];
 	_darkColor = color;
 
-	float r, g, b, alpha;
-	NSColor *rgb = [_darkColor colorUsingColorSpaceName:@"NSCalibratedRGBColorSpace"];
+	CGFloat r, g, b, alpha;
+	NSColor *rgb = [_darkColor colorUsingColorSpaceName:NSCalibratedRGBColorSpace];
 	[rgb getRed:&r green:&g blue:&b alpha:&alpha];
 	_darkColorFloat[0] = r;
 	_darkColorFloat[1] = g;
 	_darkColorFloat[2] = b;
 	_darkColorFloat[3] = alpha;
 }
-- (NSColor *) darkColor
-{
-	return _darkColor;
-}
-- (const float *) darkColorFloat
+- (const CGFloat *) darkColorFloat
 {
 	return _darkColorFloat;
 }
@@ -173,63 +178,26 @@ void KABubbleShadeInterpolate( void *info, float const *inData, float *outData )
 	[_lightColor release];
 	_lightColor = color;
 
-	float r, g, b, alpha;
-	NSColor *rgb = [_lightColor colorUsingColorSpaceName:@"NSCalibratedRGBColorSpace"];
+	CGFloat r, g, b, alpha;
+	NSColor *rgb = [_lightColor colorUsingColorSpaceName:NSCalibratedRGBColorSpace];
 	[rgb getRed:&r green:&g blue:&b alpha:&alpha];
 	_lightColorFloat[0] = r;
 	_lightColorFloat[1] = g;
 	_lightColorFloat[2] = b;
 	_lightColorFloat[3] = alpha;
 }
-- (NSColor *) lightColor
-{
-	return _lightColor;
-}
-- (const float *) lightColorFloat
+- (const CGFloat *) lightColorFloat
 {
 	return _lightColorFloat;
 }
-- (void) setTextColor:(NSColor *)color;
-{
-	[color retain];
-	[_textColor release];
-	_textColor = color;
-}
-- (NSColor *) textColor
-{
-	return _textColor;
-}
-- (void) setBorderColor:(NSColor *)color;
-{
-	[color retain];
-	[_borderColor release];
-	_borderColor = color;
-}
-- (NSColor *) borderColor
-{
-	return _borderColor;
-}
 
 #pragma mark -
 
-- (id) target {
-	return _target;
-}
-
-- (void) setTarget:(id) object {
-	_target = object;
-}
+@synthesize target=_target;
 
 #pragma mark -
 
-- (SEL) action {
-	return _action;
-}
-
-- (void) setAction:(SEL) selector {
-	_action = selector;
-}
-
+@synthesize action=_action;
 
 #pragma mark -
 

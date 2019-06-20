@@ -21,7 +21,6 @@
 #import <Foundation/Foundation.h>
 #import "CDFileDialogControl.h"
 
-@interface CDFileSelectControl : CDFileDialogControl {
-}
+@interface CDFileSelectControl : CDFileDialogControl
 
 @end

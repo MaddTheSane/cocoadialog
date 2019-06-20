@@ -63,9 +63,9 @@
 
 - (NSArray *) runControlFromOptions:(CDOptions *)options
 {
-	float timeout = 4.;
-	float alpha = 0.95;
-	int position = 0;
+	NSTimeInterval timeout = 4.;
+	double alpha = 0.95;
+	KABubblePosition position = 0;
 
 	[self setOptions:options];
 	activeBubbles = [[NSMutableArray array] retain];
@@ -97,14 +97,14 @@
 	}	
 
 	if ([options hasOpt:@"timeout"]) {
-		if (![[NSScanner scannerWithString:[options optValue:@"timeout"]] scanFloat:&timeout]) {
+		if (![[NSScanner scannerWithString:[options optValue:@"timeout"]] scanDouble:&timeout]) {
 			[CDControl debug:@"Could not parse the timeout option."];
 			timeout = 4.;
 		}
 	}
 
 	if ([options hasOpt:@"alpha"]) {
-		if (![[NSScanner scannerWithString:[options optValue:@"alpha"]] scanFloat:&alpha]) {
+		if (![[NSScanner scannerWithString:[options optValue:@"alpha"]] scanDouble:&alpha]) {
 			[CDControl debug:@"Could not parse the alpha option."];
 			timeout = .95;
 		}
@@ -133,7 +133,7 @@
 		// for any extra bubbles
 		if ([icons count] < [texts count]) {
 			NSImage *defaultIcon = [self _iconImage];
-			int numToAdd = [texts count] - [icons count];
+			NSInteger numToAdd = [texts count] - [icons count];
 			for (i = 0; i < numToAdd; i++) {
 				[icons addObject:defaultIcon];
 			}
@@ -233,7 +233,7 @@
 }
 
 // We really ought to stick this in a proper NSColor category
-+ (NSColor *) colorFromHex:(NSString *) hexValue alpha:(float)alpha
++ (NSColor *) colorFromHex:(NSString *) hexValue alpha:(CGFloat)alpha
 {
 	unsigned char r, g, b;
 	unsigned int value;
@@ -242,12 +242,12 @@
 	g = (unsigned char)(value >> 8);
 	b = (unsigned char)value;
 	NSColor *rv = nil;
-	rv = [NSColor colorWithCalibratedRed:(float)r/255 green:(float)g/255 blue:(float)b/255 alpha:alpha];
+	rv = [NSColor colorWithCalibratedRed:(CGFloat)r/255 green:(CGFloat)g/255 blue:(CGFloat)b/255 alpha:alpha];
 	return rv;
 }
 
 // the `i` index is zero based.
-- (NSColor *) _colorForBubble:(int)i fromKey:(NSString *)key alpha:(float)alpha
+- (NSColor *) _colorForBubble:(NSInteger)i fromKey:(NSString *)key alpha:(CGFloat)alpha
 {
 	CDOptions *options = [self options];
 	NSArray *colorArgs = nil;

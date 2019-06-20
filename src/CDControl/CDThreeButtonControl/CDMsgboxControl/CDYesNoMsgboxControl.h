@@ -20,7 +20,7 @@
 
 #import <Foundation/Foundation.h>
 #import "CDMsgboxControl.h"
-@interface CDYesNoMsgboxControl : CDMsgboxControl {
-}
+
+@interface CDYesNoMsgboxControl : CDMsgboxControl
 
 @end

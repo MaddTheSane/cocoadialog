@@ -85,7 +85,7 @@
 		[text release];
 	} else if ([options optValue:@"text-from-file"]) {
 		NSString *contents = [NSString stringWithContentsOfFile:
-			[options optValue:@"text-from-file"]];
+			[options optValue:@"text-from-file"] usedEncoding:NULL error:NULL];
 		if (contents == nil) {
 			if ([options hasOpt:@"debug"]) {
 				[CDControl debug:@"Could not read file"];

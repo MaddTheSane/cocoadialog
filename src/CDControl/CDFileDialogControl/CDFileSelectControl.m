@@ -44,14 +44,13 @@
 
 - (NSArray *) runControlFromOptions:(CDOptions *)options
 {
-	int result;
+	NSInteger result;
 	NSOpenPanel *panel = [NSOpenPanel openPanel];
-	NSString *file = nil;
-	NSString *dir = nil;
 	
 	[self setOptions:options];
 	[self setMisc:panel];
 	NSArray *extensions = [self extensionsFromOptionKey:@"with-extensions"];
+	panel.allowedFileTypes = extensions;
 
 	// set select-multiple
 	if ([options hasOpt:@"select-multiple"]) {
@@ -80,11 +79,13 @@
 	// set starting file (to be used later with 
 	// runModal...) - doesn't work.
 	if ([options optValue:@"with-file"] != nil) {
-		file = [options optValue:@"with-file"];
+		NSString *file = [options optValue:@"with-file"];
+		panel.nameFieldStringValue = file;
 	}
 	// set starting directory (to be used later with runModal...)
 	if ([options optValue:@"with-directory"] != nil) {
-		dir = [options optValue:@"with-directory"];
+		NSString *dir = [options optValue:@"with-directory"];
+		panel.directoryURL = [NSURL fileURLWithPath:dir];
 	}
 
 	// resize window if user specified alternate width/height
@@ -92,7 +93,7 @@
 		[panel setContentSize:[self findNewSizeForWindow:panel]];
 	}
 	
-	result = [panel runModalForDirectory:dir file:file types:extensions];
+	result = [panel runModal];
 
 	if (result == NSOKButton) {
 		return [panel filenames];

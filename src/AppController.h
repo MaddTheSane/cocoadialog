@@ -24,6 +24,6 @@
 
 @interface AppController : NSObject {
 }
-- (CDControl *) chooseControl:(NSString *)runMode useOptions:options addExtraOptionsTo:(NSMutableDictionary *)extraOptions;
+- (__kindof CDControl *) chooseControl:(NSString *)runMode useOptions:(CDOptions*)options addExtraOptionsTo:(NSMutableDictionary *)extraOptions;
 
 @end

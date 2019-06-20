@@ -115,7 +115,7 @@
 		itemRv = [popup titleOfSelectedItem];
 	} else {
 		buttonRv = [NSString stringWithFormat:@"%d",rv];
-		itemRv   = [NSString stringWithFormat:@"%d", [popup indexOfSelectedItem]];
+		itemRv   = [NSString stringWithFormat:@"%ld", (long)[popup indexOfSelectedItem]];
 	}
 	return [NSArray arrayWithObjects:buttonRv, itemRv, nil];
 }

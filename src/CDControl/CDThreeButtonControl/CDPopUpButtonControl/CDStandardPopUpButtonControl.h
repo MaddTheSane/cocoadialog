@@ -21,7 +21,6 @@
 #import <Foundation/Foundation.h>
 #import "CDPopUpButtonControl.h"
 
-@interface CDStandardPopUpButtonControl : CDPopUpButtonControl {
-}
+@interface CDStandardPopUpButtonControl : CDPopUpButtonControl
 
 @end

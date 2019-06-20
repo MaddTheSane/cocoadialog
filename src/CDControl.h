@@ -28,7 +28,7 @@
 // Each NSString is printed to stdout on its own line.
 // Return an empty NSArray if there is no output to be printed, or nil
 // on error.
-@protocol CDControlProtocol
+@protocol CDControlProtocol <NSObject>
 - (NSArray *) runControlFromOptions:(CDOptions *)options;
 - (NSArray *) runControl;
 @end
