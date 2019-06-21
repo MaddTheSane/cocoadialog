@@ -19,7 +19,8 @@
 */
 
 #import "CDProgressbarControl.h"
-#import <sys/select.h>
+#include <sys/select.h>
+#include <sys/_select.h>
 
 /*
  NOTE: I'm using C's select to do the non-blocking reading of stdin.
