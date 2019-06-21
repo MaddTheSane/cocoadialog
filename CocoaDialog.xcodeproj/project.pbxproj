@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 42;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -109,8 +109,8 @@
 		0E71D9F50963B15300FF6F7C /* CDStandardPopUpButtonControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDStandardPopUpButtonControl.m; path = CDPopUpButtonControl/CDStandardPopUpButtonControl.m; sourceTree = "<group>"; };
 		0E71D9F60963B15300FF6F7C /* CDTextboxControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDTextboxControl.m; sourceTree = "<group>"; };
 		0E71D9F70963B15300FF6F7C /* CDYesNoMsgboxControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDYesNoMsgboxControl.m; path = CDMsgboxControl/CDYesNoMsgboxControl.m; sourceTree = "<group>"; };
-		0E71DA050963B16100FF6F7C /* CocoaDialog_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CocoaDialog_Prefix.pch; path = src/CocoaDialog_Prefix.pch; sourceTree = "<group>"; };
-		0E71DA060963B16100FF6F7C /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = src/main.m; sourceTree = "<group>"; };
+		0E71DA050963B16100FF6F7C /* CocoaDialog_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoaDialog_Prefix.pch; sourceTree = "<group>"; };
+		0E71DA060963B16100FF6F7C /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0E71DA0A0963B19500FF6F7C /* cocoadialog.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = cocoadialog.icns; sourceTree = "<group>"; };
 		0E71DA120963B19500FF6F7C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E71DA130963B19500FF6F7C /* Inputbox.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = Inputbox.nib; sourceTree = "<group>"; };
@@ -313,6 +313,7 @@
 				0E71DA060963B16100FF6F7C /* main.m */,
 			);
 			name = "Other Sources";
+			path = src;
 			sourceTree = "<group>";
 		};
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
@@ -404,7 +405,7 @@
 				LastUpgradeCheck = 1020;
 			};
 			buildConfigurationList = 0E77E9A30963C37C00D651A3 /* Build configuration list for PBXProject "CocoaDialog" */;
-			compatibilityVersion = "Xcode 2.4";
+			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 1;
 			knownRegions = (
