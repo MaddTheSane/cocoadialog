@@ -18,7 +18,7 @@ typedef NS_OPTIONS(unsigned int, KABubblePosition) {
 @protocol KABubbleWindowControllerDelegate;
 
 @interface KABubbleWindowController : NSWindowController <NSWindowDelegate> {
-	id<KABubbleWindowControllerDelegate> _delegate;
+	__weak id<KABubbleWindowControllerDelegate> _delegate;
 	NSTimer *_animationTimer;
 	unsigned int _depth;
 	BOOL _autoFadeOut;
@@ -58,7 +58,7 @@ typedef NS_OPTIONS(unsigned int, KABubblePosition) {
 
 @property (retain) id representedObject;
 
-@property (assign) id<KABubbleWindowControllerDelegate> delegate;
+@property (weak) id<KABubbleWindowControllerDelegate> delegate;
 
 @property NSTimeInterval timeout;
 

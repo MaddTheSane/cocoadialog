@@ -47,8 +47,8 @@
 		0E71DA260963B19500FF6F7C /* SecureInputbox.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E71DA190963B19500FF6F7C /* SecureInputbox.xib */; };
 		0E71DA270963B19500FF6F7C /* Textbox.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E71DA1A0963B19500FF6F7C /* Textbox.xib */; };
 		0E77E9B60963C46500D651A3 /* KABubbleWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E77E9B30963C46500D651A3 /* KABubbleWindow.m */; };
-		0E77E9B70963C46500D651A3 /* KABubbleWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E77E9B40963C46500D651A3 /* KABubbleWindowController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		0E77E9B80963C46500D651A3 /* KABubbleWindowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E77E9B50963C46500D651A3 /* KABubbleWindowView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0E77E9B70963C46500D651A3 /* KABubbleWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E77E9B40963C46500D651A3 /* KABubbleWindowController.m */; };
+		0E77E9B80963C46500D651A3 /* KABubbleWindowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E77E9B50963C46500D651A3 /* KABubbleWindowView.m */; };
 		0E77E9BC0963C47A00D651A3 /* KABubbleWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E77E9B90963C47A00D651A3 /* KABubbleWindow.h */; };
 		0E77E9BD0963C47A00D651A3 /* KABubbleWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E77E9BA0963C47A00D651A3 /* KABubbleWindowController.h */; };
 		0E77E9BE0963C47A00D651A3 /* KABubbleWindowView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E77E9BB0963C47A00D651A3 /* KABubbleWindowView.h */; };

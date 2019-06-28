@@ -29,7 +29,7 @@ static unsigned int bubbleWindowDepth = 0;
 							numExpectedBubbles:(NSInteger)numExpected
 								bubblePosition:(KABubblePosition)position
 {
-	id ret = [[[self alloc] initWithTextColor:textColor darkColor:darkColor lightColor:lightColor borderColor:borderColor numExpectedBubbles:numExpected bubblePosition:position] autorelease];
+	id ret = [[self alloc] initWithTextColor:textColor darkColor:darkColor lightColor:lightColor borderColor:borderColor numExpectedBubbles:numExpected bubblePosition:position];
 	[ret setTitle:title];
 	[ret setTimeout:timeout];
 	if( [text isKindOfClass:[NSString class]] ) [ret setText:text];
@@ -45,7 +45,7 @@ static unsigned int bubbleWindowDepth = 0;
 	  numExpectedBubbles:(NSInteger)numExpected
 		  bubblePosition:(KABubblePosition)position
 {
-	NSPanel *panel = [[[NSPanel alloc] initWithContentRect:NSMakeRect( 0., 0., 270., 65. ) styleMask:NSWindowStyleMaskBorderless backing:NSBackingStoreBuffered defer:NO] autorelease];
+	NSPanel *panel = [[NSPanel alloc] initWithContentRect:NSMakeRect( 0., 0., 270., 65. ) styleMask:NSWindowStyleMaskBorderless backing:NSBackingStoreBuffered defer:NO];
 	[panel setBecomesKeyOnlyIfNeeded:YES];
 	[panel setHidesOnDeactivate:NO];
 	[panel setBackgroundColor:[NSColor clearColor]];
@@ -57,7 +57,7 @@ static unsigned int bubbleWindowDepth = 0;
 	[panel setReleasedWhenClosed:YES];
 	[panel setDelegate:self];
 
-	KABubbleWindowView *view = [[[KABubbleWindowView alloc] initWithFrame:[panel frame]] autorelease];
+	KABubbleWindowView *view = [[KABubbleWindowView alloc] initWithFrame:[panel frame]];
 	[view setTarget:self];
 	[view setAction:@selector( _bubbleClicked: )];
 	[view setDarkColor:darkColor];
@@ -109,10 +109,7 @@ static unsigned int bubbleWindowDepth = 0;
 - (void) dealloc {
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
 
-	[_target release];
-	[_representedObject release];
 	[_animationTimer invalidate];
-	[_animationTimer release];
 
 	_target = nil;
 	_representedObject = nil;
@@ -120,21 +117,18 @@ static unsigned int bubbleWindowDepth = 0;
 	_animationTimer = nil;
 
 	if( _depth == bubbleWindowDepth ) bubbleWindowDepth = 0;
-
-	[super dealloc];
 }
 
 #pragma mark -
 
 - (void) _stopTimer {
 	[_animationTimer invalidate];
-	[_animationTimer release];
 	_animationTimer = nil;
 }
 
 - (void) _waitBeforeFadeOut {
 	[self _stopTimer];
-	_animationTimer = [[NSTimer scheduledTimerWithTimeInterval:_timeout target:self selector:@selector( startFadeOut ) userInfo:nil repeats:NO] retain];
+	_animationTimer = [NSTimer scheduledTimerWithTimeInterval:_timeout target:self selector:@selector( startFadeOut ) userInfo:nil repeats:NO];
 }
 
 - (void) _fadeIn:(NSTimer *) inTimer {
@@ -155,7 +149,7 @@ static unsigned int bubbleWindowDepth = 0;
 		if( [_delegate respondsToSelector:@selector( bubbleDidFadeOut: )] )
 			[_delegate bubbleDidFadeOut:self];
 		[self close];
-		[self autorelease]; // Relase, we retained when we faded in.
+		//[self autorelease]; // Relase, we retained when we faded in.
 	}
 }
 
@@ -177,17 +171,17 @@ static unsigned int bubbleWindowDepth = 0;
 - (void) startFadeIn {
 	if( [_delegate respondsToSelector:@selector( bubbleWillFadeIn: )] )
 		[_delegate bubbleWillFadeIn:self];
-	[self retain]; // Retain, after fade out we release.
+	//[self retain]; // Retain, after fade out we release.
 	[self showWindow:nil];
 	[self _stopTimer];
-	_animationTimer = [[NSTimer scheduledTimerWithTimeInterval:TIMER_INTERVAL target:self selector:@selector( _fadeIn: ) userInfo:nil repeats:YES] retain];
+	_animationTimer = [NSTimer scheduledTimerWithTimeInterval:TIMER_INTERVAL target:self selector:@selector( _fadeIn: ) userInfo:nil repeats:YES];
 }
 
 - (void) startFadeOut {
 	if( [_delegate respondsToSelector:@selector( bubbleWillFadeOut: )] )
 		[_delegate bubbleWillFadeOut:self];
 	[self _stopTimer];
-	_animationTimer = [[NSTimer scheduledTimerWithTimeInterval:TIMER_INTERVAL target:self selector:@selector( _fadeOut: ) userInfo:nil repeats:YES] retain];
+	_animationTimer = [NSTimer scheduledTimerWithTimeInterval:TIMER_INTERVAL target:self selector:@selector( _fadeOut: ) userInfo:nil repeats:YES];
 }
 
 #pragma mark -

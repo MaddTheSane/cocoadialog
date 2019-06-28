@@ -25,9 +25,9 @@
 
 - (NSDictionary *) availableKeys
 {
-	NSNumber *vOne = [NSNumber numberWithInt:CDOptionsOneValue];
-	NSNumber *vNone = [NSNumber numberWithInt:CDOptionsNoValues];
-	NSNumber *vMul = [NSNumber numberWithInt:CDOptionsMultipleValues];
+	NSNumber *vOne = @(CDOptionsOneValue);
+	NSNumber *vNone = @(CDOptionsNoValues);
+	NSNumber *vMul = @(CDOptionsMultipleValues);
 
 	return [NSDictionary dictionaryWithObjectsAndKeys:
 		// Options for one bubble
@@ -221,12 +221,6 @@
 		[NSApp stop:self];
 		[NSApp terminate:nil];
 	}
-}
-
-- (void) dealloc
-{
-	activeBubbles = nil;
-	fadingBubbles = nil;
 }
 
 // We really ought to stick this in a proper NSColor category

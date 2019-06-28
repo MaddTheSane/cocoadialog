@@ -5,12 +5,14 @@
 
 #import <Cocoa/Cocoa.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface KABubbleWindowView : NSView {
 	NSImage *_icon;
 	NSString *_title;
 	NSAttributedString *_text;
 	SEL _action;
-	__unsafe_unretained id _target;
+	__weak id _target;
 	CGFloat _darkColorFloat[4];   // Cache these rather than
 	CGFloat _lightColorFloat[4];  // calculating over and over.
 	NSColor *_darkColor;
@@ -30,8 +32,10 @@
 @property (retain, nullable) NSColor *textColor;
 @property (retain, nullable) NSColor *borderColor;
 
-@property (assign, nullable) id target;
+@property (weak, nullable) id target;
 
 @property (nullable) SEL action;
 
 @end
+
+NS_ASSUME_NONNULL_END
