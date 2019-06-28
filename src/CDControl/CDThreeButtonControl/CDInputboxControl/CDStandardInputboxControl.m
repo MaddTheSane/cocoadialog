@@ -25,8 +25,8 @@
 
 - (NSDictionary *) availableKeys
 {
-	NSNumber *vOne = [NSNumber numberWithInt:CDOptionsOneValue];
-	NSNumber *vNone = [NSNumber numberWithInt:CDOptionsNoValues];
+	NSNumber *vOne = @(CDOptionsOneValue);
+	NSNumber *vNone = @(CDOptionsNoValues);
 	
 	return [NSDictionary dictionaryWithObjectsAndKeys:
 		vOne, @"text",

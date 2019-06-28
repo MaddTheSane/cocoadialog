@@ -25,18 +25,17 @@
 
 - (NSDictionary *) availableKeys
 {
-	NSNumber *vMul = [NSNumber numberWithInt:CDOptionsMultipleValues];
-	NSNumber *vOne = [NSNumber numberWithInt:CDOptionsOneValue];
-	NSNumber *vNone = [NSNumber numberWithInt:CDOptionsNoValues];
+	NSNumber *vMul = @(CDOptionsMultipleValues);
+	NSNumber *vOne = @(CDOptionsOneValue);
+	NSNumber *vNone = @(CDOptionsNoValues);
 
-	return [NSDictionary dictionaryWithObjectsAndKeys:
-		vOne,  @"text",
-		vMul,  @"with-extensions",
-		vOne,  @"with-directory",
-		vOne,  @"with-file",
-		vNone, @"packages-as-directories",
-		vNone, @"no-create-directories",
-		nil];
+	return @{@"text": vOne,
+			 @"with-extensions": vMul,
+			 @"with-directory": vOne,
+			 @"with-file": vOne,
+			 @"packages-as-directories": vNone,
+			 @"no-create-directories": vNone
+			 };
 }
 
 - (NSArray *) runControlFromOptions:(CDOptions *)options

@@ -34,16 +34,7 @@
 	return [self initWithOptions:nil];
 }
 
-- (CDOptions *) options
-{
-	return _options;
-}
-- (void) setOptions:(CDOptions *)options
-{
-	[options retain];
-	[_options release];
-	_options = options;
-}
+@synthesize options=_options;
 
 - (NSArray *) runControl
 {
@@ -66,17 +57,17 @@
 }
 + (NSDictionary *) globalAvailableKeys
 {
-	NSNumber *vOne = [NSNumber numberWithInt:CDOptionsOneValue];
-	NSNumber *vNone = [NSNumber numberWithInt:CDOptionsNoValues];
-	return [NSDictionary dictionaryWithObjectsAndKeys:
-		vNone, @"help",
-		vNone, @"debug",
-		vOne,  @"title",
-		vOne,  @"width",
-		vOne,  @"height",
-		vNone, @"string-output",
-		vNone, @"no-newline",
-		nil];
+	NSNumber *vOne = @(CDOptionsOneValue);
+	NSNumber *vNone = @(CDOptionsNoValues);
+	return @{
+			 @"help": vNone,
+			 @"debug": vNone,
+			 @"title": vOne,
+			 @"width": vOne,
+			 @"height": vOne,
+			 @"string-output": vNone,
+			 @"no-newline": vNone,
+		};
 }
 
 - (CDOptions *) controlOptionsFromArgs:(NSArray *)args
@@ -159,7 +150,7 @@
 
 + (void) debug:(NSString *)message
 {
-	NSFileHandle *fh = [NSFileHandle fileHandleWithStandardOutput];
+	NSFileHandle *fh = [NSFileHandle fileHandleWithStandardError];
 	NSString *output = [NSString stringWithFormat:@"ERROR: %@\n", message]; 
 	if (fh) {
 		[fh writeData:[output dataUsingEncoding:NSUTF8StringEncoding]];
@@ -168,17 +159,11 @@
 
 + (void) printHelp
 {
-	NSFileHandle *fh = [NSFileHandle fileHandleWithStandardOutput];
+	NSFileHandle *fh = [NSFileHandle fileHandleWithStandardError];
 	NSString *output = @"Usage: CocoaDialog type [options]\n\tAvailable types:\n\t\tfileselect, filesave, msgbox, yesno-msgbox, ok-msgbox,\n\t\ttextbox, progressbar, inputbox, standard-inputbox,\n\t\tsecure-inputbox, secure-standard-inputbox\n\t\tdropdown, standard-dropdown, bubble.\n\tGlobal Options:\n\t\t--help, --debug, --title, --width, --height,\n\t\t--string-output, --no-newline\n\nSee http://cocoadialog.sourceforge.net/documentation.html\nfor detailed documentation.\n";
 	if (fh) {
 		[fh writeData:[output dataUsingEncoding:NSUTF8StringEncoding]];
 	}
-}
-
-- (void) dealloc
-{
-	[_options release];
-	[super dealloc];
 }
 
 @end

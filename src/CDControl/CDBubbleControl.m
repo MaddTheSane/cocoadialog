@@ -68,8 +68,8 @@
 	KABubblePosition position = 0;
 
 	[self setOptions:options];
-	activeBubbles = [[NSMutableArray array] retain];
-	fadingBubbles = [[NSMutableArray array] retain];
+	activeBubbles = [NSMutableArray array];
+	fadingBubbles = [NSMutableArray array];
 	
 	if ([options hasOpt:@"x-placement"]) {
 		NSString *xplace = [options optValue:@"x-placement"];
@@ -225,11 +225,8 @@
 
 - (void) dealloc
 {
-	[activeBubbles release];
-	[fadingBubbles release];
 	activeBubbles = nil;
 	fadingBubbles = nil;
-	[super dealloc];
 }
 
 // We really ought to stick this in a proper NSColor category
@@ -311,7 +308,7 @@
 			NSString *fileName = [[NSBundle mainBundle] pathForResource:iconName ofType:@"icns"];
 			NSImage *icon = nil;
 			if (fileName) {
-				icon = [[[NSImage alloc ]initWithContentsOfFile:fileName] autorelease];
+				icon = [[NSImage alloc ]initWithContentsOfFile:fileName];
 				if (icon == nil && [options hasOpt:@"debug"]) {
 					[CDControl debug:[NSString stringWithFormat:@"Could not get image from specified icon file '%@'.", fileName]];
 				}
@@ -331,7 +328,7 @@
 		en = [iconArgs objectEnumerator];
 		NSString *fileName;
 		while (fileName = (NSString *)[en nextObject]) {
-			NSImage *icon = [[[NSImage alloc ]initWithContentsOfFile:fileName] autorelease];
+			NSImage *icon = [[NSImage alloc ]initWithContentsOfFile:fileName];
 			if (icon == nil) {
 				if ([options hasOpt:@"debug"]) {
 					[CDControl debug:[NSString stringWithFormat:@"Could not get image from specified icon file '%@'.", fileName]];
@@ -355,7 +352,7 @@
 	NSImage *icon = nil;
 
 	if ([options hasOpt:@"icon-file"]) {
-		icon = [[[NSImage alloc ]initWithContentsOfFile:[options optValue:@"icon-file"]] autorelease];
+		icon = [[NSImage alloc ]initWithContentsOfFile:[options optValue:@"icon-file"]];
 		if (icon == nil && [options hasOpt:@"debug"]) {
 			[CDControl debug:[NSString stringWithFormat:@"Could not get image from specified icon file '%@'.", [options optValue:@"icon-file"]]];
 		}
@@ -364,7 +361,7 @@
 		NSString *iconName = [options optValue:@"icon"];
 		NSString *fileName = [[NSBundle mainBundle] pathForResource:iconName ofType:@"icns"];
 		if (fileName) {
-			icon = [[[NSImage alloc ]initWithContentsOfFile:fileName] autorelease];
+			icon = [[NSImage alloc ]initWithContentsOfFile:fileName];
 			if (icon == nil && [options hasOpt:@"debug"]) {
 				[CDControl debug:[NSString stringWithFormat:@"Could not get image from specified icon file '%@'.", fileName]];
 			}

@@ -82,7 +82,6 @@
 			[options optValue:@"text"]];
 		[[textView textStorage] setAttributedString:text];
 		[textView scrollRangeToVisible:NSMakeRange([text length], 0)];
-		[text release];
 	} else if ([options optValue:@"text-from-file"]) {
 		NSString *contents = [NSString stringWithContentsOfFile:
 			[options optValue:@"text-from-file"] usedEncoding:NULL error:NULL];
@@ -95,10 +94,9 @@
 			text = [[NSAttributedString alloc] initWithString:contents];
 		}
 		[[textView textStorage] setAttributedString:text];
-		[text release];
 	} else {
 		[[textView textStorage] setAttributedString:
-			[[[NSAttributedString alloc] initWithString:@""] autorelease]];
+			[[NSAttributedString alloc] initWithString:@""]];
 	}
 		
 	[self setTitleButtonsLabel:[options optValue:@"informative-text"]];

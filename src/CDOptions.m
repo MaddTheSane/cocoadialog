@@ -26,7 +26,7 @@
 - initWithOpts:(NSMutableDictionary *)opts
 {
 	self = [super init];
-	_options = [opts retain];
+	_options = opts;
 	return self;
 }
 - init
@@ -47,7 +47,7 @@
 }
 
 + (CDOptions *) getOpts:(NSArray *)args 
-	  availableKeys:(NSDictionary *)availableKeys
+		  availableKeys:(NSDictionary *)availableKeys
 {
 	NSMutableDictionary *options;
 	NSString *arg;
@@ -110,7 +110,7 @@
 		i++;
 	} // End processing all args
 
-	return [[[CDOptions alloc] initWithOpts:options] autorelease];
+	return [[CDOptions alloc] initWithOpts:options];
 }
 
 + (void) printOpts:(NSDictionary *)availableKeys
@@ -122,8 +122,7 @@
 	}
 	
 	NSEnumerator *enumerator = [availableKeys keyEnumerator];
-	id key;
-	while (key = [enumerator nextObject]) {
+	for (id key in enumerator) {
 		[fh writeData:[@"\t--" dataUsingEncoding:NSUTF8StringEncoding]];
 		[fh writeData:[key dataUsingEncoding:NSUTF8StringEncoding]];
 		[fh writeData:[@"\n" dataUsingEncoding:NSUTF8StringEncoding]];
@@ -168,9 +167,4 @@
 	[_options setObject:value forKey:key];
 }
 
-- (void) dealloc
-{
-	[_options release];
-	[super dealloc];
-}
 @end

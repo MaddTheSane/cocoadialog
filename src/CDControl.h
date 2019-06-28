@@ -21,25 +21,25 @@
 #import <Foundation/Foundation.h>
 #import "CDOptions.h"
 
-// All control objects must include a runControlFromOptions: method.
-// This should look at the options and display a control (dialog with message,
-// inputbox, or whatever) to the user, get any necessary info from it, and
-// return an NSArray of NSString objects.
-// Each NSString is printed to stdout on its own line.
-// Return an empty NSArray if there is no output to be printed, or nil
-// on error.
+/// All control objects must include a runControlFromOptions: method.
+/// This should look at the options and display a control (dialog with message,
+/// inputbox, or whatever) to the user, get any necessary info from it, and
+/// return an NSArray of NSString objects.
+/// Each NSString is printed to stdout on its own line.
+/// Return an empty NSArray if there is no output to be printed, or nil
+/// on error.
 @protocol CDControlProtocol <NSObject>
 - (NSArray *) runControlFromOptions:(CDOptions *)options;
 - (NSArray *) runControl;
 @end
 
-// CDControl provides a runControl method.  It invokes
-// runControlFromOptions: with the options specified in initWithOptions:
-// You must override runControlFromOptions.
+/// CDControl provides a \c runControl method.  It invokes
+/// \c runControlFromOptions: with the options specified in \c initWithOptions:
+/// You must override runControlFromOptions.
 @interface CDControl : NSObject <CDControlProtocol> {
 	CDOptions *_options;
 }
-- initWithOptions:(CDOptions *)options;
+- (instancetype)initWithOptions:(CDOptions *)options;
 
 // You should override availableKeys if you want options local to your control
 - (NSDictionary *) availableKeys;
@@ -48,8 +48,7 @@
 - (CDOptions *) controlOptionsFromArgs:(NSArray *)args;
 - (CDOptions *) controlOptionsFromArgs:(NSArray *)args 
 			withGlobalKeys:(NSDictionary *)globalKeys;
-- (CDOptions *) options;
-- (void) setOptions:(CDOptions *)options;
+@property (strong) CDOptions *options;
 
 // Looks at the --width and --height options and determines if the window
 // needs to be resized.  If so, return NSSize, otherwise returns an NSSize

@@ -25,8 +25,8 @@
 
 - (NSDictionary *) availableKeys
 {
-	NSNumber *vOne = [NSNumber numberWithInt:CDOptionsOneValue];
-	NSNumber *vNone = [NSNumber numberWithInt:CDOptionsNoValues];
+	NSNumber *vOne = @(CDOptionsOneValue);
+	NSNumber *vNone = @(CDOptionsNoValues);
 
 	return [NSDictionary dictionaryWithObjectsAndKeys:
 		vOne, @"text",
@@ -92,7 +92,7 @@
 	CDOptions *options = [self options];
 	NSImage *icon = nil;
 	if ([options hasOpt:@"icon-file"]) {
-		icon = [[[NSImage alloc ]initWithContentsOfFile:[options optValue:@"icon-file"]] autorelease];
+		icon = [[NSImage alloc] initWithContentsOfFile:[options optValue:@"icon-file"]];
 		if (icon == nil && [options hasOpt:@"debug"]) {
 			[CDControl debug:[NSString stringWithFormat:@"Could not get image from specified icon file '%@'.", [options optValue:@"icon-file"]]];
 		}
@@ -101,7 +101,7 @@
 		NSString *iconName = [options optValue:@"icon"];
 		NSString *fileName = [[NSBundle mainBundle] pathForResource:iconName ofType:@"icns"];
 		if (fileName) {
-			icon = [[[NSImage alloc ]initWithContentsOfFile:fileName] autorelease];
+			icon = [[NSImage alloc] initWithContentsOfFile:fileName];
 			if (icon == nil && [options hasOpt:@"debug"]) {
 				[CDControl debug:[NSString stringWithFormat:@"Could not get image from specified icon file '%@'.", fileName]];
 			}

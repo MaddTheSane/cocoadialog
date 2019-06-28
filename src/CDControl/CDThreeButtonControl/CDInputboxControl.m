@@ -72,7 +72,7 @@
 	} else {
 		[textField setStringValue:@""];
 	}
-	inputText = [[textField stringValue] retain];
+	inputText = [[textField stringValue] copy];
 
 	[self setTitleButtonsLabel:[options optValue:@"informative-text"]];
 
@@ -105,13 +105,7 @@
 
 - (void)controlTextDidChange:(NSNotification *)aNotification
 {
-	[inputText release];
-	inputText = [[textField stringValue] retain];
-}
-- (void) dealloc
-{
-	[inputText release];
-	[super dealloc];
+	inputText = [[textField stringValue] copy];
 }
 
 @end

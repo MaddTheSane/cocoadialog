@@ -20,9 +20,11 @@
 
 #import <Foundation/Foundation.h>
 
-#define CDOptionsNoValues       0
-#define CDOptionsOneValue       1
-#define CDOptionsMultipleValues 2
+typedef NS_ENUM(int, CDOptionsValues) {
+	CDOptionsNoValues       = 0,
+	CDOptionsOneValue       = 1,
+	CDOptionsMultipleValues = 2
+};
 
 // Simple wrapper for commandline options.
 // Easily used with [CDOptions getOpts:[[NSProcessInfo processInfo] arguments]]
