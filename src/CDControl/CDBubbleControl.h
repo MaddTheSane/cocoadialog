@@ -22,6 +22,8 @@
 #import "CDControl.h"
 #import "KABubbleWindowController.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface CDBubbleControl : CDControl <KABubbleWindowControllerDelegate> {
 	NSMutableArray *activeBubbles;
 	NSMutableArray *fadingBubbles;
@@ -33,8 +35,10 @@
 - (NSColor *) _colorForBubble:(NSInteger)i fromKey:(NSString *)key alpha:(CGFloat)alpha;
 
 // returns an NSArray of NSImage's or nil if there's only one.
-- (NSArray<NSImage*> *) _iconImages;
+- (nullable NSArray<NSImage*> *) _iconImages;
 // try _iconImages first, then this.
 - (NSImage *) _iconImage;
 
 @end
+
+NS_ASSUME_NONNULL_END

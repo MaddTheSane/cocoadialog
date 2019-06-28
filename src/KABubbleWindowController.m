@@ -45,8 +45,6 @@ static unsigned int bubbleWindowDepth = 0;
 	  numExpectedBubbles:(NSInteger)numExpected
 		  bubblePosition:(KABubblePosition)position
 {
-	extern unsigned int bubbleWindowDepth;
-
 	NSPanel *panel = [[[NSPanel alloc] initWithContentRect:NSMakeRect( 0., 0., 270., 65. ) styleMask:NSWindowStyleMaskBorderless backing:NSBackingStoreBuffered defer:NO] autorelease];
 	[panel setBecomesKeyOnlyIfNeeded:YES];
 	[panel setHidesOnDeactivate:NO];
@@ -95,6 +93,7 @@ static unsigned int bubbleWindowDepth = 0;
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector( _applicationDidSwitch: ) name:NSApplicationDidBecomeActiveNotification object:[NSApplication sharedApplication]];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector( _applicationDidSwitch: ) name:NSApplicationDidHideNotification object:[NSApplication sharedApplication]];
 
+	if (self = [super initWithWindow:panel]) {
 	_depth = ++bubbleWindowDepth;
 	_autoFadeOut = YES;
 	_delegate = nil;
@@ -102,8 +101,9 @@ static unsigned int bubbleWindowDepth = 0;
 	_representedObject = nil;
 	_action = NULL;
 	_animationTimer = nil;
+	}
 
-	return ( self = [super initWithWindow:panel] );
+	return self;
 }
 
 - (void) dealloc {
@@ -119,7 +119,6 @@ static unsigned int bubbleWindowDepth = 0;
 	_delegate = nil;
 	_animationTimer = nil;
 
-	extern unsigned int bubbleWindowDepth;
 	if( _depth == bubbleWindowDepth ) bubbleWindowDepth = 0;
 
 	[super dealloc];

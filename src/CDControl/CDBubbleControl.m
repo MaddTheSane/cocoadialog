@@ -238,7 +238,7 @@
 	r = (unsigned char)(value >> 16);
 	g = (unsigned char)(value >> 8);
 	b = (unsigned char)value;
-	NSColor *rv = nil;
+	NSColor *rv;
 	rv = [NSColor colorWithCalibratedRed:(CGFloat)r/255 green:(CGFloat)g/255 blue:(CGFloat)b/255 alpha:alpha];
 	return rv;
 }
